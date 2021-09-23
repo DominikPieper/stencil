@@ -1,4 +1,6 @@
 import type { CliInitOptions, CompilerSystem, Config, ConfigFlags, Logger, TaskCommand } from '@stencil/core/internal';
+import type { StencilCLIConfigArgs } from './state/stencil-cli-config';
+import StencilCLIConfig from './state/stencil-cli-config';
 
 /**
  * Runs the CLI with the given options. This is used by Stencil's default `bin/stencil` file,
@@ -16,4 +18,6 @@ export declare function runTask(coreCompiler: any, config: Config, task: TaskCom
 
 export declare function parseFlags(args: string[], sys?: CompilerSystem): ConfigFlags;
 
-export { CompilerSystem, Config, ConfigFlags, Logger, TaskCommand };
+export declare function initializeStencilCLIConfig(options: StencilCLIConfigArgs): StencilCLIConfig;
+
+export { CompilerSystem, Config, ConfigFlags, Logger, TaskCommand, StencilCLIConfig, StencilCLIConfigArgs };
